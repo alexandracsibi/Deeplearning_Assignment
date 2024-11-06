@@ -65,8 +65,6 @@ url = "https://raw.githubusercontent.com/NagypalMarton/DeepLearning_Assignment-D
 response = requests.get(url)
 with open("/data/raw/GDA_df_processed.csv", "wb") as file:
     file.write(response.content)
-
-df = pd.read_csv("GDA_df_processed.csv")
 ```
 
 To prepare the data in graph format for the model, initialize the dataset with the `GDADataset` class. This will structure the disease-gene data for graph-based analysis:
