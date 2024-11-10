@@ -15,6 +15,7 @@ The goal of this project is to create a graph neural network for predicting dise
 
 
 **How to run it (building and running the container, running your solution within the container)** <br>
+
 0. **STEP** <br>
 
 1. **STEP**
