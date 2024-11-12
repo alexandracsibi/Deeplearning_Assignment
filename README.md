@@ -122,7 +122,7 @@ After obtaining the Docker image, you can either run **JupyterLab** or the **Gra
    ```bash
    docker run -p 8888:8888 -it alexandracsibi/deeplearning-project:latest
    ```  
-   - After starting the container, connect to JupyterLab at [http://localhost:8888](http://localhost:8888). You will be prompted to enter a password.
+   - After starting the container, connect to JupyterLab at [http://localhost:8888](http://localhost:8888). You will be prompted to enter a password ("kicsikutya").
 
 2. **Run the Gradio App**  
    Use the Gradio app to interact with the pre-trained models for gene-disease link prediction.  
