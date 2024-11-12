@@ -12,7 +12,7 @@ The goal of this project is to create a graph neural network for predicting dise
 - [Related YouTube video](https://www.youtube.com/watch?v=-UjytpbqX4A&list=LL&index=1)
 - [Dataset](https://www.disgenet.org/)
 
-Welcome to the Deep Learning Assignment repository. This repository contains code, data, and resources for building and evaluating graph neural network (GNN) models to predict gene-disease associations. Below is a detailed overview of the repository's structure and its components.
+**Welcome to the Deep Learning Assignment repository. This repository contains code, data, and resources for building and evaluating graph neural network (GNN) models to predict gene-disease associations. Below is a detailed overview of the repository's structure and its components.** <br>
 
 ## Repository Structure
 
