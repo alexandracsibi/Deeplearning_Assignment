@@ -1,5 +1,5 @@
 # DeepLearning_Project
-**Team members' names and Neptun codes:** <br>
+**Name and Neptun code:** <br>
 - Csibi Alexandra *(GPVFEV)*
 
 **Project description** <br>
