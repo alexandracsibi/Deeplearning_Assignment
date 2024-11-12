@@ -178,7 +178,7 @@ The GIN model demonstrated the best performance in separating positive and negat
 ### Contribution Note
 
 In this project:
-- The data fetching process was a "collaborative" effort between me and my former teammate (Nagypál Márton Péter, Q88P3E).
+- The data fetching process was a collaborative effort between me and my former teammate (Nagypál Márton Péter, Q88P3E).
 - All subsequent steps, including data processing, graph preparation, model training, evaluation, and application development, were completed individually by me.
 
 ---
