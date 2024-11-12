@@ -142,7 +142,37 @@ The performance metrics for the models trained and evaluated in this project are
 |-------------|----------|----------|---------------|-----------|
 | **F1**      | 0.8835   | 0.9020   | 0.9217        | 0.9252    |
 | **AUC**     | 0.9414   | 0.9640   | 0.9272        | 0.9716    |
-| **Confusion Matrix** | ![GCN_DP](#)| ![GCN_MLP](#)| ![GraphSAGE_MLP](#)| **[[3079-237-Causality](3004,5128),**
+
+### Confusion Matrices
+**On the test data** <br>
+
+#### **GCN_DP**
+|                | Predicted Positive | Predicted Negative |
+|----------------|--------------------|--------------------|
+| **Actual Positive** | 2890               | 422                |
+| **Actual Negative** | 357                | 2955               |
+
+#### **GCN_MLP**
+|                | Predicted Positive | Predicted Negative |
+|----------------|--------------------|--------------------|
+| **Actual Positive** | 3044               | 268                |
+| **Actual Negative** | 371                | 2941               |
+
+#### **GraphSAGE_MLP**
+|                | Predicted Positive | Predicted Negative |
+|----------------|--------------------|--------------------|
+| **Actual Positive** | 2781               | 531                |
+| **Actual Negative** | 27                 | 3285               |
+
+#### **GIN_MLP**
+|                | Predicted Positive | Predicted Negative |
+|----------------|--------------------|--------------------|
+| **Actual Positive** | 3089               | 223                |
+| **Actual Negative** | 269                | 3043               |
+
+---
+
+The GIN model demonstrated the best performance in separating positive and negative edges, as evidenced by its high F1 score, AUC, and confusion matrix on the test dataset. This exceptional edge classification capability translates directly to its effectiveness in the Gradio app for individual gene-disease predictions. Its precision in distinguishing associations makes it the most reliable model for practical applications in real-world scenarios.
 
 ---
 
