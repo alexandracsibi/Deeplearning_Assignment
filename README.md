@@ -115,6 +115,7 @@ There are two options to set up the project:
 ## Run the Project
 
 After obtaining the Docker image, you can either run **JupyterLab** or the **Gradio app**.
+If you built the Docker image locally, replace `alexandracsibi/deeplearning-project:latest` with your local image name.
 
 1. **Run JupyterLab**  
    Use JupyterLab to explore the project by testing data acquisition, graph data preparation, and training or evaluating models.  
@@ -131,8 +132,6 @@ After obtaining the Docker image, you can either run **JupyterLab** or the **Gra
    docker run -p 7860:7860 -it alexandracsibi/deeplearning-project:latest 
    ```
    - Once the container is running, connect to the app at [http://localhost:7860](http://localhost:7860).
-     
-If you built the Docker image locally, replace `alexandracsibi/deeplearning-project:latest` with your local image name.
 ---
 
 ### Contribution Note
