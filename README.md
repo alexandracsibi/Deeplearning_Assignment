@@ -144,27 +144,26 @@ The performance metrics for the models trained and evaluated in this project are
 | **AUC**     | 0.9414   | 0.9640   | 0.9272        | 0.9716    |
 
 ### Confusion Matrices
-**On the test data** <br>
 
-#### **GCN_DP**
+#### **GCN_DP model**
 |                | Predicted Positive | Predicted Negative |
 |----------------|--------------------|--------------------|
 | **Actual Positive** | 2890               | 422                |
 | **Actual Negative** | 357                | 2955               |
 
-#### **GCN_MLP**
+#### **GCN_MLP model**
 |                | Predicted Positive | Predicted Negative |
 |----------------|--------------------|--------------------|
 | **Actual Positive** | 3044               | 268                |
 | **Actual Negative** | 371                | 2941               |
 
-#### **GraphSAGE_MLP**
+#### **GraphSAGE_MLP model**
 |                | Predicted Positive | Predicted Negative |
 |----------------|--------------------|--------------------|
 | **Actual Positive** | 2781               | 531                |
 | **Actual Negative** | 27                 | 3285               |
 
-#### **GIN_MLP**
+#### **GIN_MLP model**
 |                | Predicted Positive | Predicted Negative |
 |----------------|--------------------|--------------------|
 | **Actual Positive** | 3089               | 223                |
