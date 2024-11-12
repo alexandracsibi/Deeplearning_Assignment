@@ -16,101 +16,87 @@ Welcome to the Deep Learning Assignment repository. This repository contains cod
 
 **Repository Structure** <br>
 
-<details>
-<summary><strong>1. Data</strong></summary>
-
+## 1. Data
 - **`GDA_df.csv`**: Contains preprocessed data for gene-disease associations, ready to be used by the graph models.  
-- **`graph_data.pkl`**: A serialized file containing the homogeneous graph data used by the models.  
-
-</details>
+- **`graph_data.pkl`**: A serialized file containing the homogeneous graph data used by the models.
 
 ---
 
-<details>
-<summary><strong>2. Models</strong></summary>
-
+## 2. Models
 The repository includes four graph neural network (GNN) models:
 
-### GCN_DP
-- **Architecture**: Two `GCNConv` layers for encoding, followed by a simple dot product for classification.  
-- **Use Case**: Basic model for link prediction.  
+- **GCN_DP**  
+  - **Architecture**: Two `GCNConv` layers for encoding, followed by a simple dot product for classification.  
+  - **Use Case**: Basic model for link prediction.  
 
-### GCN_MLP
-- **Architecture**: Two `GCNConv` layers for encoding, followed by a Multilayer Perceptron (MLP) for decoding.  
-- **Use Case**: Improved model with more complex decoding.  
+- **GCN_MLP**  
+  - **Architecture**: Two `GCNConv` layers for encoding, followed by a Multilayer Perceptron (MLP) for decoding.  
+  - **Use Case**: Improved model with more complex decoding.  
 
-### GraphSAGE_MLP
-- **Architecture**: Two `SAGEConv` layers for encoding, followed by an MLP for decoding.  
-- **Use Case**: Handles larger graphs by sampling neighbors during training.  
+- **GraphSAGE_MLP**  
+  - **Architecture**: Two `SAGEConv` layers for encoding, followed by an MLP for decoding.  
+  - **Use Case**: Handles larger graphs by sampling neighbors during training.  
 
-### GIN_MLP
-- **Architecture**: Two `GINConv` layers for encoding, followed by an MLP for decoding.  
-- **Use Case**: Captures structural properties of the graph more effectively.  
+- **GIN_MLP**  
+  - **Architecture**: Two `GINConv` layers for encoding, followed by an MLP for decoding.  
+  - **Use Case**: Captures structural properties of the graph more effectively.  
 
-**Model Weights**:  
+**Model Weights**  
 The best-performing configurations are saved in the following files:  
 - `GCN_DP.pth`  
 - `GCN_MLP.pth`  
 - `GraphSAGE_MLP.pth`  
-- `GIN_MLP.pth`  
-
-</details>
+- `GIN_MLP.pth`
 
 ---
 
-<details>
-<summary><strong>3. Code Components</strong></summary>
+## 3. Code Components
 
 ### Data Handling
-#### `data_acquisition_processing.py`
-- Downloads and processes raw data to prepare it for GNN models.  
-- Provides the `get_data` function:  
-  - **Parameters**: `disgenet_api_key`, `disease_type`.  
-  - Fetches and processes associations based on disease type.  
+- **`data_acquisition_processing.py`**  
+  - Downloads and processes raw data to prepare it for GNN models.  
+  - Provides the `get_data` function:  
+    - **Parameters**: `disgenet_api_key`, `disease_type`.  
+    - Fetches and processes associations based on disease type.  
 
-#### `graph_preparation.py`
-- Prepares the homogeneous graph for training:  
-  - **Node Features**: Combines gene and disease features, along with a node type indicator (1 for genes, 0 for diseases).  
-  - **Edge Index**: Assigns unique IDs to nodes and creates edges based on associations. Reverse edges are added for better embeddings.  
+- **`graph_preparation.py`**  
+  - Prepares the homogeneous graph for training:  
+    - **Node Features**: Combines gene and disease features, along with a node type indicator (1 for genes, 0 for diseases).  
+    - **Edge Index**: Assigns unique IDs to nodes and creates edges based on associations. Reverse edges are added for better embeddings.
 
 ### Model Training
-#### `trainer.py`
-Implements a `Trainer` class for training, evaluating, and testing models:
-- **Training**:  
-  - Encodes node embeddings and decodes edge predictions.  
-  - Computes loss for positive and negative edges using `BCEWithLogitsLoss`.  
-  - Supports learning rate scheduling (`CosineAnnealingLR`) and early stopping.  
-- **Evaluation**:  
-  - Computes AUC, F1 score, and confusion matrix.  
-  - Dynamically determines the best threshold for binary classification.  
-- **Testing**:  
-  - Loads the best model checkpoint to evaluate test performance.  
+- **`trainer.py`**  
+  Implements a `Trainer` class for training, evaluating, and testing models:
+  - **Training**  
+    - Encodes node embeddings and decodes edge predictions.  
+    - Computes loss for positive and negative edges using `BCEWithLogitsLoss`.  
+    - Supports learning rate scheduling (`CosineAnnealingLR`) and early stopping.  
+  - **Evaluation**  
+    - Computes AUC, F1 score, and confusion matrix.  
+    - Dynamically determines the best threshold for binary classification.  
+  - **Testing**  
+    - Loads the best model checkpoint to evaluate test performance.
 
 ### Interactive Application
-#### `gradio_app.py`
-- Provides a Gradio-based interface for user input:  
-  - Accepts a gene ID and disease ID.  
-  - Fetches features from the DisGeNET API.  
-  - Processes input to match the training graph format.  
-  - Updates the graph if the gene or disease is missing.  
-  - Uses the loaded model to predict associations and outputs binary classification based on the best threshold.  
-
-</details>
+- **`gradio_app.py`**  
+  - Provides a Gradio-based interface for user input:  
+    - Accepts a gene ID and disease ID.  
+    - Fetches features from the DisGeNET API.  
+    - Processes input to match the training graph format.  
+    - Updates the graph if the gene or disease is missing.  
+    - Uses the loaded model to predict associations and outputs binary classification based on the best threshold.
 
 ---
 
-<details>
-<summary><strong>4. Containerization</strong></summary>
+## 4. Containerization
 
-### `Dockerfile`
-- Sets up the environment for running either JupyterLab (for development) or Gradio (for user interaction).  
-- Includes all dependencies for data processing, model training, and serving.  
+- **`Dockerfile`**  
+  - Sets up the environment for running either JupyterLab (for development) or Gradio (for user interaction).  
+  - Includes all dependencies for data processing, model training, and serving.  
 
-### `start.sh`
-- Script for running the Docker container:  
-  - Option to start JupyterLab or the Gradio application.  
-
-</details>
+- **`start.sh`**  
+  - Script for running the Docker container:  
+    - Option to start JupyterLab or the Gradio application.
 
 **Installation Instructions** <br>
 
