@@ -1,6 +1,6 @@
 # DeepLearning_Project
 **Name and Neptun code:** <br>
-- Csibi Alexandra *(GPVFEV)*
+- Csibi Alexandra, GPVFEV
 
 **Project description** <br>
 *Disease-gene interaction prediction with graph neural networks* <br>
