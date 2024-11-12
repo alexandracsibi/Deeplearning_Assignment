@@ -2,7 +2,7 @@
 **Name and Neptun code:** <br>
 - Csibi Alexandra, GPVFEV
 
-**Project description** <br>
+## Project description
 *Disease-gene interaction prediction with graph neural networks* <br>
 The goal of this project is to create a graph neural network for predicting disease-gene associations. Working with DisGeNET, a comprehensive database of these associations, you'll apply deep learning to an important challenge of bioinformatics. By choosing this project, you'll gain experience in the intersection of deep learning and bioinformatics while extracting valuable insights from real-world data.
 
@@ -14,7 +14,7 @@ The goal of this project is to create a graph neural network for predicting dise
 
 Welcome to the Deep Learning Assignment repository. This repository contains code, data, and resources for building and evaluating graph neural network (GNN) models to predict gene-disease associations. Below is a detailed overview of the repository's structure and its components.
 
-**Repository Structure** <br>
+## Repository Structure
 
 ### 1. Data
 - **`GDA_df.csv`**: Contains preprocessed data for gene-disease associations, ready to be used by the graph models.  
@@ -98,6 +98,49 @@ The best-performing configurations are saved in the following files:
   - Script for running the Docker container:  
     - Option to start JupyterLab or the Gradio application.
 
-**Installation Instructions** <br>
+## Installation Instructions
+There are two options to set up the project:
 
-**Usage** <br>
+1. **Clone and Build Locally**  
+   Download all the files from the GitHub repository and build the lightweight Docker image locally.
+   
+2. **Pull Prebuilt Image**  
+   Pull the publicly available Docker image:
+   ```bash
+   docker pull alexandracsibi/deeplearning-project
+   ```
+
+---
+
+## Run the Project
+
+After obtaining the Docker image, you can either run **JupyterLab** or the **Gradio app**.
+
+1. **Run JupyterLab**  
+   Use JupyterLab to explore the project by testing data acquisition, graph data preparation, and training or evaluating models.  
+   Run the following command:
+   ```bash
+   docker run -p 8888:8888 -it alexandracsibi/deeplearning-project:latest
+   ```  
+   - After starting the container, connect to JupyterLab at [http://localhost:8888](http://localhost:8888). You will be prompted to enter a password.
+
+2. **Run the Gradio App**  
+   Use the Gradio app to interact with the pre-trained models for gene-disease link prediction.  
+   Run the following command:
+   ```bash
+   docker run -p 7860:7860 -it alexandracsibi/deeplearning-project:latest 
+   ```
+   - Once the container is running, connect to the app at [http://localhost:7860](http://localhost:7860).
+     
+If you built the Docker image locally, replace `alexandracsibi/deeplearning-project:latest` with your local image name.
+---
+
+### Contribution Note
+
+In this project:
+- The data fetching process was a "collaborative" effort between me and my former teammate (Nagypál Márton Péter, Q88P3E).
+- All subsequent steps, including data processing, graph preparation, model training, evaluation, and application development, were completed individually by me.
+
+---
+
+
