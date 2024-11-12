@@ -16,13 +16,13 @@ Welcome to the Deep Learning Assignment repository. This repository contains cod
 
 **Repository Structure** <br>
 
-## 1. Data
+### 1. Data
 - **`GDA_df.csv`**: Contains preprocessed data for gene-disease associations, ready to be used by the graph models.  
 - **`graph_data.pkl`**: A serialized file containing the homogeneous graph data used by the models.
 
 ---
 
-## 2. Models
+### 2. Models
 The repository includes four graph neural network (GNN) models:
 
 - **GCN_DP**  
@@ -50,9 +50,9 @@ The best-performing configurations are saved in the following files:
 
 ---
 
-## 3. Code Components
+### 3. Code Components
 
-### Data Handling
+#### Data Handling
 - **`data_acquisition_processing.py`**  
   - Downloads and processes raw data to prepare it for GNN models.  
   - Provides the `get_data` function:  
@@ -64,7 +64,7 @@ The best-performing configurations are saved in the following files:
     - **Node Features**: Combines gene and disease features, along with a node type indicator (1 for genes, 0 for diseases).  
     - **Edge Index**: Assigns unique IDs to nodes and creates edges based on associations. Reverse edges are added for better embeddings.
 
-### Model Training
+#### Model Training
 - **`trainer.py`**  
   Implements a `Trainer` class for training, evaluating, and testing models:
   - **Training**  
@@ -77,7 +77,7 @@ The best-performing configurations are saved in the following files:
   - **Testing**  
     - Loads the best model checkpoint to evaluate test performance.
 
-### Interactive Application
+#### Interactive Application
 - **`gradio_app.py`**  
   - Provides a Gradio-based interface for user input:  
     - Accepts a gene ID and disease ID.  
@@ -88,7 +88,7 @@ The best-performing configurations are saved in the following files:
 
 ---
 
-## 4. Containerization
+### 4. Containerization
 
 - **`Dockerfile`**  
   - Sets up the environment for running either JupyterLab (for development) or Gradio (for user interaction).  
