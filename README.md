@@ -134,6 +134,18 @@ If you built the Docker image locally, replace `alexandracsibi/deeplearning-proj
    - Once the container is running, connect to the app at [http://localhost:7860](http://localhost:7860).
 ---
 
+## Model Evaluations
+
+The performance metrics for the models trained and evaluated in this project are summarized below:
+
+| Metric      | GCN_DP   | GCN_MLP  | GraphSAGE_MLP | GIN_MLP   |
+|-------------|----------|----------|---------------|-----------|
+| **F1**      | 0.8835   | 0.9020   | 0.9217        | 0.9252    |
+| **AUC**     | 0.9414   | 0.9640   | 0.9272        | 0.9716    |
+| **Confusion Matrix** | ![GCN_DP](#)| ![GCN_MLP](#)| ![GraphSAGE_MLP](#)| **[[3079-237-Causality](3004,5128),**
+
+---
+
 ### Contribution Note
 
 In this project:
